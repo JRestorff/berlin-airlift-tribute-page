@@ -1,0 +1,2 @@
+# The Berlin Airlift, Tribute Page
+This project contains a tribute page to the Berlin blockade. The blockade, which took place in 1948/1949, refers to when the Western Allies organized an airlift to carry supplies to West Berlin, but the mission was blocked by the Soviet Union.
