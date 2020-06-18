@@ -307,14 +307,7 @@ figcaption {
     transform: translateX(-50%);
     width: 80%;
     border-radius: 3px;    
-}
-
-@media screen and (max-width : 48em) {
-    .highlights_heading {
-        top: 8rem;
-    }
-}
-    
+}    
     
 /* HIGHLIGHTS, BACK SIDE STYLING */    
 .highlights_side_back {
