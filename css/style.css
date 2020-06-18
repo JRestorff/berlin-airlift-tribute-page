@@ -308,6 +308,12 @@ figcaption {
     width: 80%;
     border-radius: 3px;    
 }
+
+@media screen and (max-width : 48em) {
+    .highlights_heading {
+        top: 4rem;
+    }
+}
     
     
 /* HIGHLIGHTS, BACK SIDE STYLING */    
@@ -717,11 +723,7 @@ font-family: var(--font-family-headline); }
 
     .highlights_picture_1 { 
         background-position: 50% 10%;
-    }
-
-    .highlights-1 .highlights_heading {
-        top: 8rem;
-    }
+    }    
 
     .highlights-2 {
         grid-column: 2 / -1;
