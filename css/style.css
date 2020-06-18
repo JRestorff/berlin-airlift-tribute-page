@@ -311,7 +311,7 @@ figcaption {
 
 @media screen and (max-width : 48em) {
     .highlights_heading {
-        top: 4rem;
+        top: 8rem;
     }
 }
     
