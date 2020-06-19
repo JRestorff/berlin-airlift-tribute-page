@@ -214,9 +214,9 @@ figcaption {
 }
 
 .plane-2 {
-    max-width: 8rem;    
+    max-width: 12rem;    
     margin-top: var(--spacing-large); 
-    margin-bottom: var(--spacing-large);    
+    margin-bottom: var(--spacing-x-large);    
 }
 
 .plane-3 {
@@ -293,7 +293,8 @@ figcaption {
 
 .highlights_heading {
     position: absolute;
-    top: 2rem;
+    /* top: 2rem; */
+    bottom: 0;
     text-align: center;
     font-family: var(--font-family-headline);
     font-size: var(--font-size-xx-large);
