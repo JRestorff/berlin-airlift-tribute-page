@@ -24,6 +24,7 @@
     
     --lineheight-text: 1.6; 
     --lineheight-heading: 1.2; /* ursprgl. 1.4 */
+    --lineheight-list: 1.8; 
     
     --color-background: #fff;
     --color-background-selection: #f0f2f3;
@@ -41,6 +42,7 @@
     
     --grid-gap: 1vw;
     --grid-gap-large: 2vw;
+    --grid-gap-x-large: 3vw;
     --max-width: 80rem;
     --spacing-xx-small: .25rem;
     --spacing-x-small: .5rem;
@@ -96,7 +98,7 @@ body {
     
     
 /*------------------------------------*\
-    #Links
+    #Links, lists
 \*------------------------------------*/
 
 a:link {
@@ -118,6 +120,12 @@ a:focus {
 a:active {
     text-decoration: underline;
     padding-top: 2px;
+}
+
+.list__square--items {
+    list-style-type: square;    
+    line-height: var(--lineheight-list);
+    padding-left: 0.8rem;
 }
     
     
@@ -208,7 +216,8 @@ figcaption {
 }
 
 .figure-logo,
-.figure-logo-2 {
+.figure-logo-2,
+.figure-logo-3 {
     display: grid;
     justify-items: center;
 }
@@ -384,7 +393,16 @@ figcaption {
     
     
     
-    
+/*------------------------------------*\
+    #SOURCES-INFORMATION (mobile)
+\*------------------------------------*/
+.sources-information {
+    margin-top: var(--spacing-x-large);
+    margin-bottom: var(--spacing-x-large);    
+}
+
+
+
     
 /*------------------------------------*\
     #POPUP
@@ -533,7 +551,7 @@ figcaption {
     
     
 /*------------------------------------*\
-    #Layout five-column grid 
+    #Basic Layout
 \*------------------------------------*/
     
 .columns-5 {
@@ -550,6 +568,11 @@ article {
 }
 
 .article-2 {
+    margin-bottom: var(--spacing-x-large);
+    margin-top: var(--spacing-x-large);
+}
+
+.article-3 {
     margin-bottom: var(--spacing-x-large);
     margin-top: var(--spacing-x-large);
 }
@@ -693,6 +716,10 @@ font-family: var(--font-family-headline); }
         max-width: 16rem;    
     }
 
+    .plane-4 {
+        
+    }
+
     .highlights-section {
         display: contents; 
     }
@@ -749,6 +776,48 @@ font-family: var(--font-family-headline); }
         column-count: 2;
         column-gap: var(--grid-gap-large);
     }
+
+    .sources-information {
+        grid-column: 1 / -1;
+        grid-row: 14;
+        align-content: start;
+        gap: var(--grid-gap-x-large);
+        margin-top: var(--spacing-x-large);
+        margin-bottom: var(--spacing-large);
+        display: grid;        
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: max-content 1fr;
+    }
+
+    .sources-information--headline {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .sources-information--text {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .sources-information--links {        
+        grid-column: 2 / -1;
+        grid-row: 2;
+        margin-top: -1rem;
+        padding-left: 1rem;
+    }
+
+    .figure-logo-3 {
+        grid-column: 2;
+        grid-row: 15;
+        margin-top: var(--spacing-large);
+        margin-bottom: var(--spacing-x-large);
+    }
+
+    .list__square--items {     
+        padding-left: 0rem;
+    }
+
+    
 }
     
     
@@ -964,6 +1033,41 @@ font-family: var(--font-family-headline); }
     .highlights-3 {
         grid-column: 5;
         grid-row: 6;
+    }
+
+    .sources-information {
+        /* grid-column: 1 / -1;
+        grid-row: 14;
+        margin-top: var(--spacing-x-large);
+        margin-bottom: var(--spacing-large);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: max-content 1fr; */
+        display: contents; 
+    }
+
+    .sources-information--headline {
+        grid-column: 3 / -1;
+        grid-row: 14;
+    }
+
+    .sources-information--text {
+        grid-column: 3;
+        grid-row: 15;
+        margin-top: var(--spacing-large);        
+    }
+
+    .sources-information--links {        
+        grid-column: 4 / 5;
+        grid-row: 15;
+        margin-top: 1em;
+        padding-left: 1rem;        
+    }
+
+    .figure-logo-3 {
+        grid-column: 1;
+        grid-row: 15;
+        margin-top: var(--spacing-large);        
     }
 }
 
