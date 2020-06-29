@@ -233,6 +233,10 @@ figcaption {
     margin-top: var(--spacing-large); 
     margin-bottom: var(--spacing-large);    
 }
+
+.plane-4 {
+    max-width: 12rem;    
+}
     
     
     
@@ -903,9 +907,16 @@ font-family: var(--font-family-headline); }
         transform: scaleX(-1);
         margin-top: 8rem;    
     }
+
+    .figure-logo-3 {        
+        display: grid;        
+        justify-self: end;        
+        margin-top: 8rem;    
+    }
     
     .plane-2,
-    .plane-3 {
+    .plane-3,
+    .plane-4 {
         max-width: 10rem;    
     }
     
