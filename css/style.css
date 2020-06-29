@@ -714,11 +714,7 @@ font-family: var(--font-family-headline); }
 
     .plane-3 {
         max-width: 16rem;    
-    }
-
-    .plane-4 {
-        
-    }
+    }    
 
     .highlights-section {
         display: contents; 
