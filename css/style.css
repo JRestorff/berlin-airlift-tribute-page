@@ -339,7 +339,7 @@ figcaption {
     
     
 /* BUTTONS */
-@media screen and (max-width: 87.5em) {
+@media screen and (max-width: 81.25em) {
     .btn__highlights {
         display: none;
     }
@@ -412,8 +412,8 @@ figcaption {
     #POPUP
 \*------------------------------------*/   
 
-/* Breakpoint 87em = 1440px */
-@media screen and (max-width: 87.5em) {
+/* Breakpoint 81.25em = 1300px */
+@media screen and (max-width: 81.25em) {
     .popup {
         display: none;
     }
