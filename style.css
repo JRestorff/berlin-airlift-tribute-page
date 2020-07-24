@@ -212,7 +212,7 @@ figure img {
 figcaption {
     font-size: var(--font-size-small); 
     line-height: 1.4;
-    margin-bottom: var(--spacing-small);
+    margin-bottom: var(--spacing-large);
 }
 
 .figure-logo,
@@ -336,8 +336,17 @@ figcaption {
     font-size: var(--font-size-medium);
     width: 80%;        
 }
+    
+    
+/* BUTTONS */
+/* @media screen and (max-width: 81.25em) {
+    .btn__highlights {
+        display: none;
+    }
+} */
 
-.btn:link {
+.btn:link,
+.btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     font-family: var(--font-family-headline);
@@ -403,63 +412,68 @@ figcaption {
     #POPUP
 \*------------------------------------*/   
 
+/* Breakpoint 81.25em = 1300px */
+@media screen and (max-width: 81.25em) {
+    /* Popup, general */
+    .popup {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: hsla(0, 0%, 0%, 0.8);
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition:all .3s;
+        transition: all .3s;
+        overflow:auto;
+    }
 
-/* Popup, general */
-.popup {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: hsla(0, 0%, 0%, 0.8);
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition:all .3s;
-    transition: all .3s;
-    overflow:auto;
-}
+    .popup__content {
+        position: absolute;
+        height: 90vh;
+        width: 80vw;
+        top: 50%;
+        left: 50%;        
+        background-color: var(--color-background);    
+        box-shadow: var(--box-shadow-black);
+        border-radius: 3px;        
+        opacity: 0;        
+        transition: all .5s .2s;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 28vw;           
+        overflow:auto;          
+    }
 
-.popup__content {
-    position: absolute;
-    height: 90vh;
-    width: 80vw;
-    top: 50%;
-    left: 50%;        
-    background-color: var(--color-background);    
-    box-shadow: var(--box-shadow-black);
-    border-radius: 3px;        
-    opacity: 0;        
-    transition: all .5s .2s;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 55vw 55vw;       
-    overflow:auto;   
-    padding: 3rem;    
-}
-
-.popup__left--above,
+    .popup__left--above,
     .popup__left--above-2,
     .popup__left--above-3 {    
         grid-column: 1;
-        grid-row: 2;               
+        grid-row: 2;
+        margin-left: var(--spacing-medium);        
     }
 
     .popup__left--below,
     .popup__left--below-2,
     .popup__left--below-3 {    
-        grid-column: 1;
-        grid-row: 3;          
+        grid-column: 2;
+        grid-row: 2;
+        margin-right: var(--spacing-medium);
     }
 
     .popup__right {        
-        grid-column: 1;
-        grid-row: 1;        
+        grid-column: 1 / -1;
+        grid-row: 1;
+        padding: var(--spacing-x-large) var(--spacing-large) var(--spacing-medium) var(--spacing-large);
     }
 
     .popup__text {        
         padding-top: var(--spacing-large); 
-        padding-bottom: var(--spacing-large);        
+        padding-bottom: var(--spacing-large);
+        column-count: 2;    
+        column-gap: var(--grid-gap-large);
     }
 
     .popup__img {    
@@ -494,6 +508,7 @@ figcaption {
     .popup__left--below-3 {
         background-image: url("../img/popup-easter-parade-03b.jpg");
     }
+
 
     /* Open states */
     .popup:target {
@@ -530,50 +545,13 @@ figcaption {
         line-height: 1.4;
         max-width: 30rem;
         padding-bottom: var(--spacing-small);
-    } 
-
-
-/* Media Queries Popup */
-
-/* Breakpoints 43.75em = 700px, 81.25em = 1300px */
-@media screen and (min-width: 43.75em) and (max-width: 81.25em) {
-    .popup__content {        
-        grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: 1fr 28vw;        
-    }
-
-    .popup__left--above,
-    .popup__left--above-2,
-    .popup__left--above-3 {    
-        grid-column: 1;
-        grid-row: 2;        
-    }
-
-    .popup__left--below,
-    .popup__left--below-2,
-    .popup__left--below-3 {    
-        grid-column: 2;
-        grid-row: 2;        
-    }
-
-    .popup__right {        
-        grid-column: 1 / -1;
-        grid-row: 1;        
-    } 
-
-    .popup__text {        
-        padding-top: var(--spacing-large); 
-        padding-bottom: var(--spacing-large);
-        column-count: 2;    
-        column-gap: var(--grid-gap-large);
-    }         
+    }    
 }
  
 
-/* Breakpoint 81.25em = 1300px */
-@media screen and (min-width: 81.25em) {
+@media screen and (min-width: 82em) {
     /* Popup, general */
-    /* .popup {
+    .popup {
         height: 100vh;
         width: 100vw;
         position: fixed;
@@ -585,12 +563,20 @@ figcaption {
         visibility: hidden;
         -webkit-transition:all .3s;
         transition: all .3s;
-    } */
+    }
 
-    .popup__content {        
-        height: 80vh;
-        width: 60vw;        
-        overflow: hidden;        
+    .popup__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        background-color: var(--color-background);    
+        box-shadow: var(--box-shadow-black);
+        border-radius: 3px;        
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.25);
         transition: all .5s .2s;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -626,11 +612,75 @@ figcaption {
 
     .popup__img {    
         background-size: cover;
-    }   
+    }
+
+    .popup__text p {
+        font-size: var(--font-size-small);
+    }
+
+    .popup__left--above {
+        background-image: url("../img/popup-easter-parade-01.jpg");
+    }
+
+    .popup__left--below {
+        background-image: url("../img/popup-easter-parade-01-b.jpg");
+    }
+
+    .popup__left--above-2 {
+        background-image: url("../img/popup-easter-parade-02b.jpg");
+    }
+
+    .popup__left--below-2 {
+        background-image: url("../img/popup-easter-parade-02a.jpg");
+    }
+
+    .popup__left--above-3 {
+        background-image: url("../img/popup-easter-parade-03a.jpg");
+    }
+
+    .popup__left--below-3 {
+        background-image: url("../img/popup-easter-parade-03b.jpg");
+    }
+
+
+    /* Open states */
+    .popup:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .popup:target .popup__content {    
+        opacity: 1;
+        -webkit-transform:translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup__close:link,
+    .popup__close:visited {
+        color: var(--color-text-default);
+        position: absolute;
+        top: 2rem;
+        right: 2.5rem;
+        font-size: 2.5rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all .2s;
+        line-height: 1;
+    }
+
+    .popup__close:hover {
+        color: var(--color-primary);
+    }
+
+    .figcaption--small {
+        font-size: var(--font-size-small); 
+        font-family: var(--font-family-headline);
+        line-height: 1.4;
+        max-width: 30rem;
+        padding-bottom: var(--spacing-small);
+    }    
 }
-
-
-
+        
     
     
 /*------------------------------------*\
@@ -695,7 +745,7 @@ font-family: var(--font-family-headline); }
     
     
 /*------------------------------------*\
-    #General Layout, breakpoint 48em = 768px
+    #Layout, breakpoint 48em = 768px
 \*------------------------------------*/
 
 @media screen and (min-width : 48em) {
@@ -894,7 +944,9 @@ font-family: var(--font-family-headline); }
 
     .list__square--items {     
         padding-left: 0rem;
-    }    
+    }
+
+    
 }
     
     
@@ -902,7 +954,7 @@ font-family: var(--font-family-headline); }
     
     
 /*------------------------------------*\
-    #General Layout, breakpoint 64em = 1024px 
+    #Layout, breakpoint 64em = 1024px 
 \*------------------------------------*/
 
 @media screen and (min-width : 64em) {    
@@ -1012,9 +1064,9 @@ font-family: var(--font-family-headline); }
         align-self: start; 
         column-count: 1;
     }
-
-
-    /* HIGHLIGHTS,  Breakpoint 64em = 1024px  */
+    
+    
+    /* = HIGHLIGHTS ab Breakpoint 64em = 1024px  */
     
     /* HIGHLIGHTS, FUNCTIONALITY */    
     .highlights {
@@ -1093,7 +1145,8 @@ font-family: var(--font-family-headline); }
     
     .highlights_side_back p {
         font-size: var(--font-size-medium);
-        width: 80%;        
+        width: 80%;
+        /* margin: 2rem auto; */
     }
         
     
@@ -1156,7 +1209,8 @@ font-family: var(--font-family-headline); }
 
 
 /* BUTTONS */    
-.btn:link {
+.btn:link,
+.btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     font-family: var(--font-family-headline);
