@@ -507,27 +507,27 @@ figcaption {
 }
 
 .popup__left--above {
-    background-image: url("../img/popup-easter-parade-01.jpg");
+    background-image: url(../img/popup-easter-parade-01.jpg);
 }
 
 .popup__left--below {
-    background-image: url("../img/popup-easter-parade-01-b.jpg");
+    background-image: url(../img/popup-easter-parade-01-b.jpg);
 }
 
 .popup__left--above-2 {
-    background-image: url("../img/popup-easter-parade-02b.jpg");
+    background-image: url(../img/popup-easter-parade-02b.jpg);
 }
 
 .popup__left--below-2 {
-    background-image: url("../img/popup-easter-parade-02a.jpg");
+    background-image: url(../img/popup-easter-parade-02a.jpg);
 }
 
 .popup__left--above-3 {
-    background-image: url("../img/popup-easter-parade-03a.jpg");
+    background-image: url(../img/popup-easter-parade-03a.jpg);
 }
 
 .popup__left--below-3 {
-    background-image: url("../img/popup-easter-parade-03b.jpg");
+    background-image: url(../img/popup-easter-parade-03b.jpg);
 }
 
 /* Open States */
