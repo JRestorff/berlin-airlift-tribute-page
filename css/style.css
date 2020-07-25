@@ -3,9 +3,7 @@
   #CSS Custom Properties
 \*------------------------------------*/
 
-:root {
-    --font-family: 'Libre Franklin', sans-serif;
-    --font-family-alt: 'Merriweather', serif;
+:root {    
     --font-family-running-text: 'Libre Baskerville', serif;
     --font-family-headline: 'Squada One', cursive;
     --font-weight-light: 300;
@@ -23,7 +21,7 @@
     --font-size-xx-small: 0.702rem;
     
     --lineheight-text: 1.6; 
-    --lineheight-heading: 1.2; /* ursprgl. 1.4 */
+    --lineheight-heading: 1.2; 
     --lineheight-list: 1.8; 
     
     --color-background: #fff;
@@ -34,11 +32,7 @@
     --color-primary-light: hsl(357, 82%, 70%);
     
     --box-shadow-black: 0 0.6rem 1.3rem rgba(0,0,0,.2);
-    --box-shadow-active: 0 0.3rem 0.6rem rgba(0,0,0,.2);
-    
-    --border-width-hairline: 0.5px;
-    --border-width-thin: 2px;
-    --border-width-thick: 5px;
+    --box-shadow-active: 0 0.3rem 0.6rem rgba(0,0,0,.2);    
     
     --grid-gap: 1vw;
     --grid-gap-large: 2vw;
@@ -52,7 +46,7 @@
     --spacing-large: 2rem;
     --spacing-x-large: 4rem;
     --spacing-xx-large: 8rem; 
-    }
+}
     
     
     
@@ -75,7 +69,7 @@ text-shadow: none; }
     
     
 /*------------------------------------*\
-    #Layout
+    #Html, Body
 \*------------------------------------*/
 
 html {
@@ -92,13 +86,13 @@ body {
     line-height: var(--lineheight-text);
     color: var(--color-text-default); 
 }
-    
+  
     
     
     
     
 /*------------------------------------*\
-    #Links, lists
+    #Links, Lists
 \*------------------------------------*/
 
 a:link {
@@ -243,10 +237,60 @@ figcaption {
     
     
 /*------------------------------------*\
-    #Highlights + Button Styling
+    #Button + Highlights Styling
 \*------------------------------------*/
 
-/* HIGHLIGHTS*/
+/* Buttons */    
+.btn:link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-family-headline);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight);
+    letter-spacing: 1px;
+    padding: 0.5rem 1.8rem;
+    border-radius: 7rem;
+    transition: all .2s;    
+    position: relative;    
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow-black);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: var(--box-shadow-active);
+}
+
+.btn-white {
+    background-color: var(--color-background);
+    color: var(--color-primary);    
+}
+
+.btn::after {
+    content: "";    
+    height: 100%;
+    width: 100%;
+    border-radius: 7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: var(--color-background);
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* Highlights */
 .highlights {    
     height: auto; 
     margin-top: var(--spacing-small);
@@ -284,7 +328,7 @@ figcaption {
 }
 
 
-/* HIGHLIGHTS, FRONT SIDE STYLING */    
+/* Highlights, Front Side Styling */    
 .highlights_picture {
     background-size: cover;    
     height: 100%;
@@ -323,7 +367,7 @@ figcaption {
     border-radius: 3px;    
 }
     
-/* HIGHLIGHTS, BACK SIDE STYLING */    
+/* Highlights, Back Side Styling */    
 .highlights_side_back {
     display: grid;
     justify-items: center;
@@ -387,24 +431,15 @@ figcaption {
 }
     
     
-    
+   
+
+
 /*------------------------------------*\
-    #SOURCES-INFORMATION (mobile)
-\*------------------------------------*/
-.sources-information {
-    margin-top: var(--spacing-x-large);
-    margin-bottom: var(--spacing-x-large);    
-}
-
-
-
-    
-/*------------------------------------*\
-    #POPUP
+    #Popup
 \*------------------------------------*/   
 
 
-/* Popup, general */
+/* Popup, General */
 .popup {
     height: 100vh;
     width: 100vw;
@@ -439,98 +474,98 @@ figcaption {
 }
 
 .popup__left--above,
-    .popup__left--above-2,
-    .popup__left--above-3 {    
-        grid-column: 1;
-        grid-row: 2;               
-    }
+.popup__left--above-2,
+.popup__left--above-3 {    
+    grid-column: 1;
+    grid-row: 2;               
+}
 
-    .popup__left--below,
-    .popup__left--below-2,
-    .popup__left--below-3 {    
-        grid-column: 1;
-        grid-row: 3;          
-    }
+.popup__left--below,
+.popup__left--below-2,
+.popup__left--below-3 {    
+    grid-column: 1;
+    grid-row: 3;          
+}
 
-    .popup__right {        
-        grid-column: 1;
-        grid-row: 1;        
-    }
+.popup__right {        
+    grid-column: 1;
+    grid-row: 1;        
+}
 
-    .popup__text {        
-        padding-top: var(--spacing-large); 
-        padding-bottom: var(--spacing-large);        
-    }
+.popup__text {        
+    padding-top: var(--spacing-large); 
+    padding-bottom: var(--spacing-large);        
+}
 
-    .popup__img {    
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+.popup__img {    
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
-    .popup__text p {
-        font-size: var(--font-size-small);
-    }
+.popup__text p {
+    font-size: var(--font-size-small);
+}
 
-    .popup__left--above {
-        background-image: url("../img/popup-easter-parade-01.jpg");
-    }
+.popup__left--above {
+    background-image: url("../img/popup-easter-parade-01.jpg");
+}
 
-    .popup__left--below {
-        background-image: url("../img/popup-easter-parade-01-b.jpg");
-    }
+.popup__left--below {
+    background-image: url("../img/popup-easter-parade-01-b.jpg");
+}
 
-    .popup__left--above-2 {
-        background-image: url("../img/popup-easter-parade-02b.jpg");
-    }
+.popup__left--above-2 {
+    background-image: url("../img/popup-easter-parade-02b.jpg");
+}
 
-    .popup__left--below-2 {
-        background-image: url("../img/popup-easter-parade-02a.jpg");
-    }
+.popup__left--below-2 {
+    background-image: url("../img/popup-easter-parade-02a.jpg");
+}
 
-    .popup__left--above-3 {
-        background-image: url("../img/popup-easter-parade-03a.jpg");
-    }
+.popup__left--above-3 {
+    background-image: url("../img/popup-easter-parade-03a.jpg");
+}
 
-    .popup__left--below-3 {
-        background-image: url("../img/popup-easter-parade-03b.jpg");
-    }
+.popup__left--below-3 {
+    background-image: url("../img/popup-easter-parade-03b.jpg");
+}
 
-    /* Open states */
-    .popup:target {
-        opacity: 1;
-        visibility: visible;
-    }
+/* Open States */
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
 
-    .popup:target .popup__content {    
-        opacity: 1;
-        -webkit-transform:translate(-50%, -50%) scale(1);
-        transform: translate(-50%, -50%) scale(0.9);
-    }
+.popup:target .popup__content {    
+    opacity: 1;
+    -webkit-transform:translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.9);
+}
 
-    .popup__close:link,
-    .popup__close:visited {
-        color: var(--color-text-default);
-        position: absolute;
-        top: 2rem;
-        right: 2.5rem;
-        font-size: 2.5rem;
-        text-decoration: none;
-        display: inline-block;
-        transition: all .2s;
-        line-height: 1;
-    }
+.popup__close:link,
+.popup__close:visited {
+    color: var(--color-text-default);
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    font-size: 2.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s;
+    line-height: 1;
+}
 
-    .popup__close:hover {
-        color: var(--color-primary);
-    }
+.popup__close:hover {
+    color: var(--color-primary);
+}
 
-    .figcaption--small {
-        font-size: var(--font-size-small); 
-        font-family: var(--font-family-headline);
-        line-height: 1.4;
-        max-width: 30rem;
-        padding-bottom: var(--spacing-small);
-    } 
+.figcaption--small {
+    font-size: var(--font-size-small); 
+    font-family: var(--font-family-headline);
+    line-height: 1.4;
+    max-width: 30rem;
+    padding-bottom: var(--spacing-small);
+} 
 
 
 /* Media Queries Popup */
@@ -572,21 +607,6 @@ figcaption {
 
 /* Breakpoint 81.25em = 1300px */
 @media screen and (min-width: 81.25em) {
-    /* Popup, general */
-    /* .popup {
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: hsla(0, 0%, 0%, 0.8);
-        z-index: 9999;
-        opacity: 0;
-        visibility: hidden;
-        -webkit-transition:all .3s;
-        transition: all .3s;
-    } */
-
     .popup__content {        
         height: 80vh;
         width: 60vw;        
@@ -630,9 +650,9 @@ figcaption {
 }
 
 
+    
 
-    
-    
+
 /*------------------------------------*\
     #Basic Layout
 \*------------------------------------*/
@@ -691,11 +711,11 @@ font-family: var(--font-family-headline); }
 }
     
     
-    
-    
+ 
+
     
 /*------------------------------------*\
-    #General Layout, breakpoint 48em = 768px
+    #Grid Layout, Breakpoint 48em = 768px
 \*------------------------------------*/
 
 @media screen and (min-width : 48em) {
@@ -902,7 +922,7 @@ font-family: var(--font-family-headline); }
     
     
 /*------------------------------------*\
-    #General Layout, breakpoint 64em = 1024px 
+    #Grid Layout, Breakpoint 64em = 1024px 
 \*------------------------------------*/
 
 @media screen and (min-width : 64em) {    
@@ -1014,9 +1034,9 @@ font-family: var(--font-family-headline); }
     }
 
 
-    /* HIGHLIGHTS,  Breakpoint 64em = 1024px  */
+    /* Highlights,  Breakpoint 64em = 1024px  */
     
-    /* HIGHLIGHTS, FUNCTIONALITY */    
+    /* Highlights, Functionality */    
     .highlights {
         perspective: 150rem;
         -moz-perspective: 150rem;
@@ -1058,7 +1078,7 @@ font-family: var(--font-family-headline); }
     }
     
     
-    /* HIGHLIGHTS, FRONT SIDE STYLING */    
+    /* Highlights, Front Side Styling */    
     .highlights_picture {
         background-size: cover;
         height: 100%;
@@ -1082,7 +1102,7 @@ font-family: var(--font-family-headline); }
         top: 14rem;       
     }    
     
-    /* HIGHLIGHTS, BACK SIDE STYLING */    
+    /* Highlights, Back Side Styling */    
     .highlights_side_back {
         display: grid;
         justify-items: center;
@@ -1097,7 +1117,7 @@ font-family: var(--font-family-headline); }
     }
         
     
-    /* Highlights, styling for 5 columns */    
+    /* Highlights, Styling for 5 Columns */    
     .highlights { 
         margin-top: var(--spacing-x-large); 
         margin-bottom: var(--spacing-x-large);
@@ -1118,14 +1138,7 @@ font-family: var(--font-family-headline); }
         grid-row: 6;
     }
 
-    .sources-information {
-        /* grid-column: 1 / -1;
-        grid-row: 14;
-        margin-top: var(--spacing-x-large);
-        margin-bottom: var(--spacing-large);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: max-content 1fr; */
+    .sources-information {        
         display: contents; 
     }
 
@@ -1153,56 +1166,3 @@ font-family: var(--font-family-headline); }
         margin-top: var(--spacing-large);        
     }
 }
-
-
-/* BUTTONS */    
-.btn:link {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: var(--font-family-headline);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight);
-    letter-spacing: 1px;
-    padding: 0.5rem 1.8rem;
-    border-radius: 7rem;
-    transition: all .2s;    
-    position: relative;    
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--box-shadow-black);
-}
-
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: var(--box-shadow-active);
-}
-
-.btn-white {
-    background-color: var(--color-background);
-    color: var(--color-primary);    
-}
-
-.btn::after {
-    content: "";    
-    height: 100%;
-    width: 100%;
-    border-radius: 7rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-
-.btn-white::after {
-    background-color: var(--color-background);
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-    
